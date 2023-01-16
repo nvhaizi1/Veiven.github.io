@@ -1,86 +1,111 @@
-#
-# This file contains configuration flags to customize your site
-#
+# Site settings
+title: 三叶草国际语
+SEOTitle: 三叶草国际语 - 让沟通更容易
+header-img: img/post-bg-desk.jpg
+email: klovien@gmail.com
+description: "中西融合, 即学即会, 从此不再辛苦背单词"
+keyword: "人工语言, 国际语, 世界语, 三叶草国际语, 三叶语"
+url: "https://klovien.github.io"          # your host, for absolute URL
+baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/klovien/klovien.github.io.git" # you code repository
 
-# Name of your site (displayed in the header)
-name: Veiven-T
-
-# Short bio or description (displayed in the header)
-description: Web Developer from Somewhere
-
-# URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://p3.itc.cn/images01/20220729/7e2b414abcc04630826455b4e557496d.jpeg
-
-#
-# Flags below are optional
-#
-
-# Includes an icon in the footer for each username you enter
-footer-links:
-  dribbble:
-  email:
-  facebook:
-  flickr:
-  github: Veiven-T/Veiven-T.github.io
-  instagram:
-  linkedin:
-  pinterest:
-  rss: # just type anything here for a working RSS icon
-  twitter: jekyllrb
-  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "Goals determine what you're going to be!"
+sidebar-avatar: /img/about-HJ.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
-# Enter your Disqus shortname (not your username) to enable commenting on posts
-# You can find your shortname on the Settings page of your Disqus account
-disqus:
 
-# Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
-google_analytics:
+# SNS settings
+RSS: false
+# weibo_username:     qiubaiying
+# zhihu_username:     qiubaiying
+# github_username:    qiubaiying
+# facebook_username:  baiying.qiu.7
+# jianshu_username:   e71990ada2fd
+# twitter_username:   qiubaiying
 
-# Your website URL (e.g. http://barryclark.github.io or http://www.barryclark.co)
-# Used for Sitemap.xml and your RSS feed
-url:
 
-# If you're hosting your site at a Project repository on GitHub pages
-# (http://yourusername.github.io/repository-name)
-# and NOT your User repository (http://yourusername.github.io)
-# then add in the baseurl here, like this: "/repository-name"
-baseurl: ""
 
-#
-# !! You don't need to change any of the configuration flags below !!
-#
 
-permalink: /:title/
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
-# The release of Jekyll Now that you're using
-version: v1.2.0
 
-# Jekyll 3 now only supports Kramdown for Markdown
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+gems: [jekyll-paginate]
+
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+highlighter: rouge
 kramdown:
-  # Use GitHub flavored markdown, including triple backtick fenced code blocks
-  input: GFM
-  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    # Use existing pygments syntax highlighting css
-    css_class: 'highlight'
+  input: GFM                            # use Github Flavored Markdown !important
 
-# Set the Sass partials directory, as we're using @imports
-sass:
-  style: :expanded # You might prefer to minify using :compressed
 
-# Use the following plug-ins
-gems:
-  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
 
-# Exclude these files from your production _site
-exclude:
-  - Gemfile
-  - Gemfile.lock
-  - LICENSE
-  - README.md
-  - CNAME
+# 评论系统
+# Disqus（https://disqus.com/）
+# disqus_username: qiubaiying
+
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: d18b343dd9c7ca49518a                            #生成的clientID
+  clientSecret: 539e88b8a7feffaddbb553b9c421dfefcbc6eced    #生成的clientSecret
+  repo: klovien.github.io    #仓库名称
+  owner: klovien    #github用户名
+  admin: klovien
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+
+# 统计
+
+# Analytics settings
+# Baidu Analytics
+# ba_track_id: b50bf2b12b5338a1845e33832976fd68
+
+# Google Analytics
+# ga_track_id: 'UA-90855596-1'            # Format: UA-xxxxxx-xx
+# ga_domain: auto               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+
+
+
+
+
+# Featured Tags
+featured-tags: true                     # 是否使用首页标签
+featured-condition-size: 1              # 相同标签数量大于这个数，才会出现在首页
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+
+# 友情链接，请尽量不要删除，谢谢！
+friends: [
+    {
+        title: "星球国际语",
+        href: "https://globien.gitee.io"
+    },{
+        title: "星球语互动社区",
+        href: "https://tieba.baidu.com/f?kw=%E6%A0%BC%E7%BD%97%E6%AF%94%E8%A8%80&fr=home"
+    },{
+        title: "知乎：人造国际语",
+        href: "https://zhuanlan.zhihu.com/Artificial-International-Language"
+    }
+]
